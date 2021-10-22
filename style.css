@@ -1,0 +1,218 @@
+* {
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Indie Flower", cursive;
+    background: #9C8763;
+    color: #555;
+
+    text-align: center;
+}
+
+.pages,
+.flips {
+    transform-style: preserve-3d;
+}
+
+.book {
+    border: 1px solid #000;
+
+    position: relative;
+    perspective: 3500px;
+    perspective-origin: center;
+    filter: drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.25));
+}
+
+.gap {
+    width: 100px;
+    height: 1200px;
+    background: none;
+    transform: rotateX(60deg);
+    transform-origin: bottom;
+    position: absolute;
+    top: -33vw;
+    /*should be the same with .page*/
+    left: calc(50% - 50px);
+}
+
+.gap::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: #555;
+    width: 100px;
+    height: 5px;
+    border-radius: 50%;
+}
+
+
+.innerpage{
+    width: 700px;
+    font-size:30px;
+
+}
+.innerpage h3{
+    font-size: 50px;
+    text-align: center;
+}
+
+.page {
+    width: 700px;
+    height: 1200px;
+    background-color: wheat;
+    position: absolute;
+    top: -33vw;
+    right: 50%;
+    transform-origin: 100% 100%;
+    border: solid #555 2px;
+    background-position: center;
+    transform-style: preserve-3d;
+    background-size: 700px 1200px;
+}
+
+.page:nth-child(1) {
+    transform: rotateX(60deg) rotateY(3deg);
+}
+
+.page:nth-child(2) {
+    transform: rotateX(60deg) rotateY(4.5deg);
+}
+
+.page:nth-child(3) {
+    transform: rotateX(60deg) rotateY(6deg);
+    animation: nextPage 25s infinite -24s steps(1);
+    background-size: 700px 1200px;
+    background-position: -2px -2px;
+}
+
+.page:nth-child(4) {
+    transform: rotateX(60deg) rotateY(-6deg);
+    right: 0;
+    left: 700px;
+    transform-origin: 0 100% ;
+}
+
+.page:nth-child(5) {
+    transform: rotateX(60deg) rotateY(-4.5deg);
+    right: 0;
+    left: 700px;
+    transform-origin: 0 100% ;
+}
+
+.page:nth-child(6) {
+    transform: rotateX(60deg) rotateY(-3deg);
+    right: 0;
+    left: 700px;
+    transform-origin: 0 100% ;
+}
+
+@keyframes flip1 {
+
+    0%,
+    20% {
+        transform: rotateX(60deg) rotateY(6deg);
+    }
+
+    80%,
+    100% {
+        transform: rotateX(60deg) rotateY(174deg);
+    }
+}
+
+@keyframes flip2 {
+
+    0%,
+    20% {
+        transform: rotateY(0deg) translateY(0px);
+    }
+
+    50% {
+        transform: rotateY(-15deg) translateY(0px);
+    }
+}
+
+.flip {
+    width: 50px;
+    height: 1200px;
+    position: absolute;
+    top: -33vw;
+    transform-origin: 100% 100%;
+    right: 100%;
+    perspective-origin: center;
+    transform-style: preserve-3d;
+    border: solid #555;
+    border-width: 2px 0px;
+    background: wheat;
+}
+.test14{
+    position: absolute;
+    left: 0;
+    width: 50px;
+    overflow: hidden;
+}
+.test13{
+    position: absolute;
+    left: 0px;
+    width: 50px;
+    overflow: hidden;
+}
+.test13 .innerpage{
+    margin-left: -50px;
+}
+.test12{
+    position: absolute;
+    left: 100px;
+    width: 50px;
+    overflow: hidden;
+    padding-left: -500px;
+
+}
+.test11{
+    position: absolute;
+    left: 150px;
+    width: 50px;
+    overflow: hidden;
+    margin-left: -150px;
+
+}
+
+.flip::before{
+    content: '';
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: wheat;
+    transform: rotateY( 180deg );
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.flip.flip1 {
+    right: 50%;
+    animation: flip1 5s infinite ease-in-out;
+}
+
+.flip.flip1::after {
+    animation: nextFlip1 25s -20s infinite steps(1);
+}
+
+.flip:not(.flip1) {
+    
+    right: calc(100%);
+    top: -2px;
+    transform-origin: right;
+    animation: flip2 5s ease-in-out infinite;
+}
+
+.flip.flip14{
+    border-width: 2px 0px 2px 2px;
+}
+
+/*翻页效果：*/
