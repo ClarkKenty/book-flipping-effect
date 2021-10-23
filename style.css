@@ -124,7 +124,35 @@ body {
     }
 }
 
+@keyframes flip11 {
+
+    0%,
+    20% {
+        transform: rotateX(60deg) rotateY(40deg);
+    }
+
+
+    80%,
+    100% {
+        transform: rotateX(60deg) rotateY(174deg);
+    }
+    
+}
+
+
+
 @keyframes flip2 {
+
+    0%,
+    20% {
+        transform: rotateY(0deg) translateY(0px);
+    }
+
+    50% {
+        transform: rotateY(-15deg) translateY(0px);
+    }
+}
+@keyframes flip22 {
 
     0%,
     20% {
@@ -148,6 +176,12 @@ body {
     border: solid #555;
     border-width: 2px 0px;
     background: wheat;
+}
+.innerflip{
+    position: absolute;
+    left: 0;
+    width: 50px;
+    overflow: hidden;
 }
 .test14{
     position: absolute;
@@ -181,8 +215,9 @@ body {
 
 }
 
-.flip::before{
-    content: '';
+
+
+.f2nest{
     right: 0px;
     bottom: 0px;
     position: absolute;
@@ -204,7 +239,6 @@ body {
 }
 
 .flip:not(.flip1) {
-    
     right: calc(100%);
     top: -2px;
     transform-origin: right;
@@ -213,6 +247,29 @@ body {
 
 .flip.flip14{
     border-width: 2px 0px 2px 2px;
+}
+#flip2 .flip.flip1 {
+    animation: flip11 5s infinite ease-in-out;
+}
+#flip2 .flip:not(.flip1) {
+    animation: flip22 5s infinite ease-in-out;
+}
+
+.flip::before{
+    content: '';
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: wheat;
+    transform: rotateY( 180deg );
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+article{
+    text-align: left;
 }
 
 /*翻页效果：*/
