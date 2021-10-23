@@ -17,7 +17,7 @@
         <div class="pages">
             <div class="page"></div>
             <div class="page"></div>
-            <div class="page" id="page3">
+            <div class="page" id="leftPage">
                 <div class="innerpage">
                     <h5>第17节　该客体总述</h5>
                     <article>
@@ -32,7 +32,7 @@
                     </article>
                 </div>
             </div>
-            <div class="page" id="page4">
+            <div class="page" id="rightPage">
                 <div class="innerpage">
                     <h5>第21节　因果概念的先天特征经验直观的理智特征</h5>
                     <article>
@@ -129,59 +129,105 @@
                 </div>
             </div>
         </div>
-    </div>
-    <script>
-        function generateFlip1() {
-            let innerflips = document.querySelectorAll('.flip>.innerflip');
-            for (let i = 0; i < innerflips.length; i++) {
-                innerflips[i].innerHTML = `<div class="innerpage">
+        <div class="leftButton" id="leftButton">
+            < </div>
+                <div class="rightButton" id="rightButton"> > </div>
+                <script>
+                    let flipBefore = `<div class="innerpage">
+                    <h5>第19节　表象的直接存在  </h5>
+                    <article>　
+                            尽管这种统一是在把物质表象化并由此产生一个永恒的外部世界的过程中，通过对内外感官的形式加以统觉才得以完成，但是，一切直接认识只能由主体通过内感官才能获得——外感官又是内感官的客体，因为外感官的直观又转而为内感官所直观——因此，对于它的意识中的表象之直接存在，主体作为内感官的形式，只服从时间法则，其结果：在同一时间里只有唯一的一个表象呈现给它（主体），虽然这一表象可能很复杂。我们谈到表象是直接存在的时，我们意指，它们不仅是在由统觉——我们很快就会看到的一种直观能力——所实现的时间和空间的统一中为我们所认识，并且通过统觉才产生了经验实在的复合表象，而且是只有在纯粹的时间中作为内感官的表象才为我们所认识，正是在被称作为此刻的中间点上它的两个流向分开。上一部分里提到的这类表象直接存在的必然条件是指发生在我们的感官亦即有机体上的因果作用，当然有机体本身也属于这类客体，也要服从在其中起支配作用的因果律，对此我们即将加以考察。一方面，根据内外世界的法则，主体不可能在一个表象上突然停止；而且，另一方面，只有时间中是没有共存的：单一的表象必然总要消失，被其他的表象取代，这是我们先天确定的法则所不能决定的，但它依赖于我们很快就要提到的某些条件。想象和梦境可以再现表象的直接存在，这是众所周知的事实；然而，对这一事实的研究属于经验心理学的范畴。
+                    </article>
+                </div>`
+                    let flipOver = `<div class="innerpage">
                     <h5>第20节　生成的充足根据律></h5>
                     <article>　
 　　在刚描述过的这类主体的客体中，充足根据律是以因果律的形式出现的，我把它称之为生成的充足根据律。有了生成的充足根据律，就我们所说的客体状态的出现和消失，即在时间之流中运动，形成经验实在的复合体而言，所有在我们表象的整个范围内呈现自身的客体就可以联系在一起。因而我们可以把因果律表述如下：当一个或几个实在客体进入一种新状态，某一其他状态肯定在这一状态之前存在，新状态就是从这一先前状态中必然而生的，只要先前状态出现。我们把这类衍生物称之为产生；把第一类状态称作为原因，第二类称之为结果。例如，当一种物质着火，在此燃烧之前肯定存在一种状态，即1．靠近氧气；2．与氧气接触；3．给予相当的温度。因为燃烧状态必然产生于这种状态，而且因为它是刚发生的，这种状态不可能预先在那里存在的，而是相反，这种状态恰好是随着前一状态而产生的。这一伴随过程称之为变化。正是由于这个原因，因果律才只与变化相关而且也只能与它们相关。在任何情况下，每个结果的产生都是一个变化，正因为它不是抢先出现的，这就毫无疑问地表明在此之前有另一变化。当它与随之而来的变化——结果相关时，它称为原因，而当它与此前的第三种变化相关时，它又必然称为结果。这就是因果锁链。它必然不能有始端。因此，每一个紧随而生的状态肯定是从先前一个状态产生的：例如，在我们上面刚谈起的情况中，就是由于物质与游离
 热量接触才使温度得以上升；不过，这种联系又依赖一个先前状态，例如，阳光照在凸透镜上；这又依赖于云雾的移动未把阳光遮住；这又依赖于风；风又依赖于密度的不平衡；这又依赖于其它条件，以至无限。
 </article>
-                </div>`;
-                innerflips[i].querySelector('.innerpage').style = `margin-left: -${50 * (13 - i)}px;`;
-            }
-        }
-        generateFlip1();
-        function generateFlip2() {
-            let innerflips = document.querySelectorAll('.flip .f2nest>.innerflip');
-            for (let i = 0; i < innerflips.length; i++) {
-                innerflips[i].innerHTML = `<div class="innerpage">
-                    <h5>第19节　表象的直接存在  </h5>
-                    <article>　
-                            尽管这种统一是在把物质表象化并由此产生一个永恒的外部世界的过程中，通过对内外感官的形式加以统觉才得以完成，但是，一切直接认识只能由主体通过内感官才能获得——外感官又是内感官的客体，因为外感官的直观又转而为内感官所直观——因此，对于它的意识中的表象之直接存在，主体作为内感官的形式，只服从时间法则，其结果：在同一时间里只有唯一的一个表象呈现给它（主体），虽然这一表象可能很复杂。我们谈到表象是直接存在的时，我们意指，它们不仅是在由统觉——我们很快就会看到的一种直观能力——所实现的时间和空间的统一中为我们所认识，并且通过统觉才产生了经验实在的复合表象，而且是只有在纯粹的时间中作为内感官的表象才为我们所认识，正是在被称作为此刻的中间点上它的两个流向分开。上一部分里提到的这类表象直接存在的必然条件是指发生在我们的感官亦即有机体上的因果作用，当然有机体本身也属于这类客体，也要服从在其中起支配作用的因果律，对此我们即将加以考察。一方面，根据内外世界的法则，主体不可能在一个表象上突然停止；而且，另一方面，只有时间中是没有共存的：单一的表象必然总要消失，被其他的表象取代，这是我们先天确定的法则所不能决定的，但它依赖于我们很快就要提到的某些条件。想象和梦境可以再现表象的直接存在，这是众所周知的事实；然而，对这一事实的研究属于经验心理学的范畴。
-                    </article>
-                </div>`;
-                innerflips[i].querySelector('.innerpage').style = `margin-left: -${50 * (i)}px;`;
-            }
-        }
-        generateFlip2();
+                </div>`
+                    function generateFlip1() {
+                        let innerflips = document.querySelectorAll('.flip>.innerflip');
+                        for (let i = 0; i < innerflips.length; i++) {
+                            innerflips[i].innerHTML = flipOver;
+                            innerflips[i].querySelector('.innerpage').style = `margin-left: -${50 * (13 - i)}px;`;
+                        }
+                    }
+                    generateFlip1();
+                    function generateFlip2() {
+                        let innerflips = document.querySelectorAll('.flip .f2nest>.innerflip');
+                        for (let i = 0; i < innerflips.length; i++) {
+                            innerflips[i].innerHTML = flipBefore;
+                            innerflips[i].querySelector('.innerpage').style = `margin-left: -${50 * (i)}px;`;
+                        }
+                    }
+                    generateFlip2();
 
+                    let leftButton = document.getElementById('leftButton');
+                    leftButton.onclick = () => {
+                        document.getElementById('flip').style = 'display:block';
+                        let flip1 = document.querySelectorAll('.flip1');
+                        let flip2 = document.querySelectorAll('.flip1 .flip')
+                        for (let i = 0; i < flip1.length; i++) {
+                            flip1[i].classList.add('fl1_an1');
+                        }
+                        for (let i = 0; i < flip2.length; i++) {
+                            flip2[i].classList.add('fl2_an1');
+                        }
+                        setTimeout(() => {
+                            document.getElementById('rightPage').innerHTML = flipBefore;
 
-        // function takeshot() {
-        //     let div =
-        //         document.getElementById('page3');
+                        }, 3000);
+                        let flips = document.querySelectorAll('.flip');
+                        for (let i = 0; i < flips.length; i++) {
+                            flips[i].style = "display:block;";
+                            flips[i].style = "animation-play-state:running;"
+                            setTimeout(() => {
+                                flips[i].style = "animation-play-state:paused;"
+                                flips[i].style = "display:none;";
+                                for (let i = 0; i < flip1.length; i++) {
+                                    flip1[i].classList.remove('fl1_an1');
+                                }
+                                for (let i = 0; i < flip2.length; i++) {
+                                    flip2[i].classList.remove('fl2_an1');
+                                }
+                            }, 3000);
 
-        //     // Use the html2canvas
-        //     // function to take a screenshot
-        //     // and append it
-        //     // to the output div
-        //     html2canvas(div).then(
-        //         function (canvas) {
-        //             let url = canvas.toDataURL();
-        //             let img = new Image();
-        //             img.src = url;
-        //             document.getElementById('book').appendChild(img);
-        //             let arr = document.querySelectorAll('.flip');
-        //             for (let i = 0; i < arr.length; i++) {
-        //                 arr[i].style = "background-image:url('" + img.src + "')"
-        //             }
-        //         })
-        // }
-        // takeshot();
-    </script>
+                        }
+                    }
+                    let rightButton = document.getElementById('rightButton');
+                    rightButton.onclick = () => {
+                        document.getElementById('flip').style = 'display:block';
+                        let flip1 = document.querySelectorAll('.flip1');
+                        let flip2 = document.querySelectorAll('.flip1 .flip')
+                        for (let i = 0; i < flip1.length; i++) {
+                            flip1[i].classList.add('fl1_an2');
+                        }
+                        for (let i = 0; i < flip2.length; i++) {
+                            flip2[i].classList.add('fl2_an2');
+                        }
+                        setTimeout(() => {
+                            document.getElementById('rightPage').innerHTML = flipBefore;
+
+                        }, 3000);
+                        let flips = document.querySelectorAll('.flip');
+                        for (let i = 0; i < flips.length; i++) {
+                            flips[i].style = "display:block;";
+                            flips[i].style = "animation-play-state:running;"
+                            setTimeout(() => {
+                                flips[i].style = "animation-play-state:paused;"
+                                flips[i].style = "display:none;";
+                                for (let i = 0; i < flip1.length; i++) {
+                                    flip1[i].classList.remove('fl1_an2');
+                                }
+                                for (let i = 0; i < flip2.length; i++) {
+                                    flip2[i].classList.remove('fl2_an2');
+                                }
+                            }, 3000);
+
+                        }
+                    }
+                </script>
 </body>
 
 </html>

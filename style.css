@@ -19,7 +19,6 @@ body {
 
 .book {
     border: 1px solid #000;
-
     position: relative;
     perspective: 3500px;
     perspective-origin: center;
@@ -27,7 +26,7 @@ body {
 }
 
 .gap {
-    width: 100px;
+    width: 10px;
     height: 1200px;
     background: none;
     transform: rotateX(60deg);
@@ -51,12 +50,13 @@ body {
 }
 
 
-.innerpage{
+.innerpage {
     width: 700px;
-    font-size:30px;
+    font-size: 30px;
 
 }
-.innerpage h3{
+
+.innerpage h3 {
     font-size: 50px;
     text-align: center;
 }
@@ -85,30 +85,28 @@ body {
 
 .page:nth-child(3) {
     transform: rotateX(60deg) rotateY(6deg);
-    animation: nextPage 25s infinite -24s steps(1);
-    background-size: 700px 1200px;
-    background-position: -2px -2px;
+
 }
 
 .page:nth-child(4) {
     transform: rotateX(60deg) rotateY(-6deg);
     right: 0;
     left: 700px;
-    transform-origin: 0 100% ;
+    transform-origin: 0 100%;
 }
 
 .page:nth-child(5) {
     transform: rotateX(60deg) rotateY(-4.5deg);
     right: 0;
     left: 700px;
-    transform-origin: 0 100% ;
+    transform-origin: 0 100%;
 }
 
 .page:nth-child(6) {
     transform: rotateX(60deg) rotateY(-3deg);
     right: 0;
     left: 700px;
-    transform-origin: 0 100% ;
+    transform-origin: 0 100%;
 }
 
 @keyframes flip1 {
@@ -122,24 +120,22 @@ body {
     100% {
         transform: rotateX(60deg) rotateY(174deg);
     }
+
 }
 
 @keyframes flip11 {
 
     0%,
     20% {
-        transform: rotateX(60deg) rotateY(40deg);
+        transform: rotateX(60deg) rotateY(174deg);
     }
-
 
     80%,
     100% {
-        transform: rotateX(60deg) rotateY(174deg);
+        transform: rotateX(60deg) rotateY(6deg);
     }
-    
+
 }
-
-
 
 @keyframes flip2 {
 
@@ -151,7 +147,9 @@ body {
     50% {
         transform: rotateY(-15deg) translateY(0px);
     }
+
 }
+
 @keyframes flip22 {
 
     0%,
@@ -160,8 +158,12 @@ body {
     }
 
     50% {
-        transform: rotateY(-15deg) translateY(0px);
+        transform: rotateY(15deg) translateY(0px);
     }
+
+}
+#flip{
+    display: none;
 }
 
 .flip {
@@ -176,100 +178,92 @@ body {
     border: solid #555;
     border-width: 2px 0px;
     background: wheat;
+
 }
-.innerflip{
+
+.innerflip {
     position: absolute;
     left: 0;
     width: 50px;
     overflow: hidden;
 }
-.test14{
-    position: absolute;
-    left: 0;
-    width: 50px;
-    overflow: hidden;
-}
-.test13{
-    position: absolute;
-    left: 0px;
-    width: 50px;
-    overflow: hidden;
-}
-.test13 .innerpage{
-    margin-left: -50px;
-}
-.test12{
-    position: absolute;
-    left: 100px;
-    width: 50px;
-    overflow: hidden;
-    padding-left: -500px;
 
-}
-.test11{
-    position: absolute;
-    left: 150px;
-    width: 50px;
-    overflow: hidden;
-    margin-left: -150px;
-
-}
-
-
-
-.f2nest{
+.f2nest {
     right: 0px;
     bottom: 0px;
     position: absolute;
     top: 0px;
     left: 0px;
     background: wheat;
-    transform: rotateY( 180deg );
+    transform: rotateY(180deg);
     transform-style: preserve-3d;
     backface-visibility: hidden;
 }
 
 .flip.flip1 {
     right: 50%;
-    animation: flip1 5s infinite ease-in-out;
+    
+    border-width: 2px 2px 2px 0px !important;
+    box-sizing: content-box;
+    height: 1196px;
+
 }
 
-.flip.flip1::after {
-    animation: nextFlip1 25s -20s infinite steps(1);
+.fl1_an1{
+    animation: flip1 3s infinite ease-out;
+    animation-play-state: paused;
+}
+.fl2_an1{
+    animation: flip2 3s ease-out infinite;
+    animation-play-state: paused;
+
+}
+.fl1_an2{
+    animation: flip11 3s infinite ease-out;
+    animation-play-state: paused;
+}
+.fl2_an2{
+    animation: flip22 3s ease-out infinite;
+    animation-play-state: paused;
+
 }
 
 .flip:not(.flip1) {
     right: calc(100%);
     top: -2px;
     transform-origin: right;
-    animation: flip2 5s ease-in-out infinite;
+
 }
 
-.flip.flip14{
-    border-width: 2px 0px 2px 2px;
-}
-#flip2 .flip.flip1 {
-    animation: flip11 5s infinite ease-in-out;
-}
-#flip2 .flip:not(.flip1) {
-    animation: flip22 5s infinite ease-in-out;
+.flip.flip14 {
+    border-width: -2px 0px 2px 2px;
+    width: 52px;
+
 }
 
-.flip::before{
-    content: '';
-    right: 0px;
-    bottom: 0px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    background: wheat;
-    transform: rotateY( 180deg );
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-}
 
-article{
+article {
     text-align: left;
+}
+
+.leftButton {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 40px;
+    left: 10px;
+    top: 300px;
+    cursor: pointer;
+}
+
+.rightButton {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 40px;
+    right: 10px;
+    top: 300px;
+    cursor: pointer;
 }
 
 /*翻页效果：*/
