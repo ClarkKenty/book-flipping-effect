@@ -1,4 +1,4 @@
 # book-flipping-effect
 
-[preview]: book.html
+[Preview](book.html)
 
