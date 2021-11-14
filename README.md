@@ -1,4 +1,4 @@
 # book-flipping-effect
 
-[Preview](book.html)
+[Preview](https://darkcraft.me/book-flipping-effect/book.html)
 
